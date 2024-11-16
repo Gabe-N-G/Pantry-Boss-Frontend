@@ -1,0 +1,31 @@
+main{
+    background-color: whitesmoke;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.home-card{
+    background-color: var(--greengrey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 75px;
+}
+
+.home-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.home-buttons button{
+    background-color: var(--darkblue);
+    color: white;
+    font-family: 'futura PT', Helvetica, Arial, sans-serif;
+    width: 100px;
+    height: 37.5px;
+    border-radius: 15%;
+}

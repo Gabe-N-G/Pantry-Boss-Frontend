@@ -25,11 +25,10 @@ function App() {
   return (
     <>
       <Navbar/>
-        <h1>Hello world!</h1>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
       <Footer/>
     </>  
   )

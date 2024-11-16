@@ -1,19 +1,26 @@
 /* color palette
   blue: #596e7f
   pink: #ecd0c7
-  grey: #e2e1df
+  grey: #e2e1df (old)
+  greenishgrey: #cbe5ce
   offwhite: #fafbfd
 */
 
 #root {
+  /* Can now access this color by going var(--colorname) in any other component */
+  --darkblue: #2E769A;
+  --pink: #ecd0c7;
+  --greengrey: #cbe5ce;
+  --offwhite: #fafbfd;
+
   box-sizing: border-box;
   text-align: center;
   font-family: 'futura PT', Helvetica, Arial, sans-serif;
-  background-color: #fafbfd;
+  background-color: var(--offwhite);
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+
