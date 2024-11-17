@@ -1,9 +1,25 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './NavBar.css'
 
-function NavBar() {
+
+// TODO: Actually pass the user into the navbar 
+function NavBar({user}) {
   return (
-    <nav>NavBar</nav>
+    <>
+      <nav>
+        <div className='navbar-title'>PantryBoss</div>
+        <div>
+          <Link> About </Link>
+
+          <Link> Sign In </Link>
+          
+          <Link> Sign Up </Link>
+        </div>
+
+
+      </nav>
+    </>
   )
 }
 

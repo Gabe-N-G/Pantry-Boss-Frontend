@@ -1,4 +1,4 @@
 footer{
-    background-color: #e2e1df;
-    bottom: 0%
+    background-color: var(--greengrey);
+    min-height: 50px;
 }
