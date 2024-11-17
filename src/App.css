@@ -18,9 +18,11 @@
   font-family: 'futura PT', Helvetica, Arial, sans-serif;
   background-color: var(--offwhite);
   min-height: 100vh;
-  margin: 0px;
+  /* Unsure why I need to give negative margin, gotta ask */
+  margin: -10px;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  
 }
 
 
