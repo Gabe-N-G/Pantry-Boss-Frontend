@@ -22,7 +22,16 @@
   margin: -10px;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  
+  /* background-image:  ; */
 }
 
 
+main{
+  background-color: whitesmoke;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.65),rgba(255, 255, 255, 0.65)), url(assets/000413920023.jpg);
+  background-size: cover;
+}

@@ -12,8 +12,8 @@ function Home() {
           <h3>A building pantry management app</h3>
           <br/>
           <div className='home-buttons'>
-            <Link>Sign up</Link>
-            <Link>Sign in</Link>
+            <Link to={"/signup"}>Sign up</Link>
+            <Link to={"/signin"}>Sign in</Link>
           </div>
 
         </div>
