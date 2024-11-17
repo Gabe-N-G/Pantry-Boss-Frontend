@@ -9,15 +9,11 @@ function NavBar({user}) {
     <>
       <nav>
         <div className='navbar-title'>PantryBoss</div>
-        <div>
-          <Link> About </Link>
-
-          <Link> Sign In </Link>
-          
-          <Link> Sign Up </Link>
-        </div>
-
-
+        <div className='links'>
+          <Link to={"/about"}> About </Link>
+          <Link to={"/signin"}>Sign in</Link>
+          <Link to={"/signup"}>Sign up</Link>
+          </div>
       </nav>
     </>
   )
