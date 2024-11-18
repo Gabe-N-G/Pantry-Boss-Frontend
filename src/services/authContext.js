@@ -7,9 +7,11 @@ import api from "./apiConfig";
 export const signUp = async (credentials) => {
   try {
     const resp = await api.post("/users/register/", credentials);
+    console.log(resp);
     localStorage.setItem("token", resp.data.access);
     return resp.data.user;
   } catch (error) {
+    console.error(error);
     throw error;
   }
 };
@@ -20,6 +22,7 @@ export const signIn = async (credentials) => {
     localStorage.setItem("token", resp.data.access);
     return resp.data.user;
   } catch (error) {
+    console.error(error);
     throw error;
   }
 };
