@@ -7,6 +7,7 @@ import Home from './components/home/Home.jsx'
 import About from './components/about/About.jsx'
 import Signin from './components/signin/SignIn.jsx'
 import Signup from './components/signup/SignUp.jsx'
+import Dashboard from './components/dashboard/dashboard.jsx'
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path='/signin' element={<Signin />} />
             <Route path='/signup' element={<Signup />} />
+            <Route path='/dashboard' element={<Dashboard />}/>
           </Routes>
         </main>  
       <Footer/>
