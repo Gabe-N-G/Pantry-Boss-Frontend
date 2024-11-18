@@ -2,7 +2,7 @@
 
 // THIS IS FROM THE CAT COLLECTOR FRONTEND, WILL 99% MOST LIKELY HAVE TO RECONFIGURE FOR OUR FRONTEND ONCE WE GET THE BACK END RUNNING -GABE
 
-import api from "./apiConfig";
+import api from "./apiconfig.js";
 
 export const signUp = async (credentials) => {
   try {

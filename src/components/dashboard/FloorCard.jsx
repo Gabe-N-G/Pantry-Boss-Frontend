@@ -60,7 +60,7 @@ function FloorCard() {
       // POST request to add floor
       const response = await axios.post(
         "/floors/",
-        { number: newFloorNumber, user: user.id } //check this w/ backend
+        { number: newFloorNumber, user: user.id }
       );
 
       const newFloor = response.data;
@@ -81,14 +81,14 @@ function FloorCard() {
               <div className="floor-details">
                 <span>Floor {floor.number}</span>
               </div>
-              {/* link to view pantries etc. other stuff here? */}
+              {/* bring in the floor look up component */}
               <button
-                className="view-pantries-button"
+                className="view-floor-button"
                 onClick={() =>
-                  console.log(`example view pantries for floor ${floor.number}`)
+                  console.log(`example view floor ${floor.number}`)
                 }
               >
-                View Pantry or whatever we want
+                View Floor
               </button>
             </li>
           ))}
