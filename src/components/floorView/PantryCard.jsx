@@ -2,7 +2,7 @@ import React from 'react'
 
 function PantryCard() {
   return (
-    <div>PantryCard</div>
+    <div className='twin-card'>PantryCard</div>
   )
 }
 

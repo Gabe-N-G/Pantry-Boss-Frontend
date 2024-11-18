@@ -2,7 +2,7 @@ import React from 'react'
 
 function DispenserCard() {
   return (
-    <div>DispenserCard</div>
+    <div className='twin-card'>DispenserCard</div>
   )
 }
 
