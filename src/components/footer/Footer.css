@@ -1,4 +1,11 @@
 footer{
     background-color: var(--greengrey);
     min-height: 50px;
+    border-top: solid 2px black;
+    display: block;
+    text-align: left;
+}
+
+footer p{
+    margin: 0;
 }
