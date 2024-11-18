@@ -1,114 +1,44 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "./FloorCard.css";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-function FloorCard() {
+const FloorCard = () => {
   const [floors, setFloors] = useState([]);
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [newFloorNumber, setNewFloorNumber] = useState("");
 
   useEffect(() => {
-    async function fetchData() {
+    const fetchFloors = async () => {
       try {
-        const token = localStorage.getItem("authToken");
-        const config = {
+        // Get the JWT token from localStorage
+        const token = localStorage.getItem('token');
+        
+        const response = await axios.get('http://localhost:8000/api/floors/', {
           headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        };
-
-        const floorsResponse = await axios.get("/api/floors", config);
-
-        const userResponse = await axios.get("/users/me", config);
-
-        setFloors(floorsResponse.data);
-        setUser(userResponse.data);
-      } catch (err) {
-        setError("Failed to load floors. Please try again later.");
-      } finally {
-        setLoading(false);
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        
+        setFloors(response.data);
+        console.log(floors)
+      } catch (error) {
+        console.error('Error fetching floors:', error);
       }
-    }
+    };
 
-    fetchData();
+    fetchFloors();
   }, []);
 
-  if (loading) {
-    return <p>Loading floors...</p>;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  }
-
-  const userFloors = floors.filter((floor) => floor.user.id === user.id);
-
-  // adding a new floor
-  const handleAddFloor = async () => {
-    if (!newFloorNumber) return;
-
-    try {
-      const token = localStorage.getItem("authToken");
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      };
-
-      // POST request to add floor
-      const response = await axios.post(
-        "/floors/",
-        { number: newFloorNumber, user: user.id }
-      );
-
-      const newFloor = response.data;
-      setFloors((prevFloors) => [...prevFloors, newFloor]);
-      setNewFloorNumber("");
-    } catch (err) {
-      setError("Failed to add floor. Please try again later.");
-    }
-  };
-
   return (
-    <div className="floor-card-container">
-      <h2>Your Floors</h2>
-      {userFloors.length > 0 ? (
-        <ul className="floor-list">
-          {userFloors.map((floor) => (
-            <li key={floor.id} className="floor-item">
-              <div className="floor-details">
-                <span>Floor {floor.number}</span>
-              </div>
-              {/* bring in the floor look up component */}
-              <button
-                className="view-floor-button"
-                onClick={() =>
-                  console.log(`example view floor ${floor.number}`)
-                }
-              >
-                View Floor
-              </button>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p> You are not currently managing any floors. </p>
-      )}
-
-      <div className="add-floor-form">
-        <h3>Add a Floor</h3>
-        <input
-          type="number"
-          placeholder="Floor Number"
-          value={newFloorNumber}
-          onChange={(e) => setNewFloorNumber(e.target.value)}
-        />
-        <button onClick={handleAddFloor}>Add Floor</button>
+    <div className="floors-container">
+      <h2>My Floors</h2>
+      <div className="floor-grid">
+        {floors.map((floor) => (
+          <div key={floor.id} className="floor-card">
+            <h3>Floor {floor.number}</h3>
+            {/* Add more floor details as needed */}
+          </div>
+        ))}
       </div>
     </div>
   );
-}
+};
 
 export default FloorCard;
