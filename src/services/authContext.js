@@ -9,6 +9,7 @@ export const signUp = async (credentials) => {
     const resp = await api.post("/users/register/", credentials);
     console.log(resp);
     localStorage.setItem("token", resp.data.access);
+    localStorage.setItem("userId", resp.data.user.id);
     return resp.data.user;
   } catch (error) {
     console.error(error);
@@ -20,6 +21,7 @@ export const signIn = async (credentials) => {
   try {
     const resp = await api.post("/users/login/", credentials);
     localStorage.setItem("token", resp.data.access);
+    localStorage.setItem("userId", resp.data.user.id);
     return resp.data.user;
   } catch (error) {
     console.error(error);
@@ -30,6 +32,7 @@ export const signIn = async (credentials) => {
 export const signOut = async () => {
   try {
     localStorage.removeItem("token");
+    localStorage.removeItem("userId");
     return true;
   } catch (error) {
     throw error;
@@ -41,6 +44,7 @@ export const verifyUser = async () => {
   if (token) {
     const resp = await api.get("/users/token/refresh/");
     localStorage.setItem("token", resp.data.access);
+    localStorage.setItem("userId", resp.data.user.id);
     return resp.data.user;
   }
   return false;
