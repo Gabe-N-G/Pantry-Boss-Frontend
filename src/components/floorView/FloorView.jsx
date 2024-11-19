@@ -14,7 +14,6 @@ function FloorView() {
   const [floorDetail, setFloorDetail] = useState(null)
   const [pantrys, setPantrys] = useState(null)
   const [pantryId, setPantryId] = useState(null)
-  const [dispener, setDispener] = useState(null)
   
   // console.log(token)
 
@@ -34,13 +33,19 @@ function FloorView() {
     fetchPantryByFloor();
   }, []);
 
+  const selectPantry = (e) => {
+    setPantryId(e.target.id)
+    console.log(pantryId)
+  }
+   
+
 
   return (
     <>
     <div className='home-card'>
       <h1>Floor {floorId}</h1>
       <div className='twin-display'>
-        <PantryCard pantrys={pantrys} pantryId={pantryId}/>
+        <PantryCard pantrys={pantrys} selectPantry={selectPantry}/>
         <DispenserCard pantryId={pantryId}/>
       </div>
     </div>  

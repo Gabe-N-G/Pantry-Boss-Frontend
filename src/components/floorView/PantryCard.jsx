@@ -4,16 +4,14 @@ import React from 'react'
 function PantryCard(props) {
   console.log(props.pantrys)
 
-const selectPantry = (e) => {
-  console.log(e.target.id)
-}
+
 
 
   return (
     <div className='twin-card'>PantryCard
       {props.pantrys ? (
         props.pantrys.map((pant)=>(
-            <button id={pant.id} onClick={selectPantry}>{pant.name}</button>
+            <button key={pant.id} id={pant.id} onClick={props.selectPantry}>{pant.name}</button>
         ))
       ) : (
         <p>Now loading</p>
