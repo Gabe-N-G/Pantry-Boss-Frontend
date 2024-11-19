@@ -41,10 +41,10 @@ function FloorView() {
 
   return (
     <>
-    <div className='home-card'>
+    <div className='big-card'>
       <h1>Floor {floorId}</h1>
       <div className='twin-display'>
-        <PantryCard pantrys={pantrys} selectPantry={selectPantry}/>
+        <PantryCard pantrys={pantrys} floorId={floorId} selectPantry={selectPantry} fetchPantryByFloor={fetchPantryByFloor}/>
         <DispenserCard pantryId={pantryId}/>
       </div>
     </div>  
