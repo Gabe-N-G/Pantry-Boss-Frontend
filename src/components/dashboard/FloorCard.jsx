@@ -62,6 +62,7 @@ const FloorCard = () => {
           value={newFloor}
           onChange={(e) => setNewFloor(e.target.value)}
           placeholder="Enter floor number"
+          min="1"
           required
         />
         <button type="submit">Add Floor</button>
@@ -71,7 +72,7 @@ const FloorCard = () => {
         {floors.map((floor) => (
           <div key={floor.id} className="floor-card">
             <h3>Floor {floor.number}</h3>
-            <button onClick={() => window.location.href = `/floors/${floor.id}`}>
+            <button onClick={() => window.location.href = `/floors/${floor.number}`}>
               View Floor Details
             </button>
           </div>
