@@ -8,7 +8,7 @@ function DispenserCard(props) {
 
   const fetchPantryByFloor =  async () =>{
     try {
-      const res = await axios.get(`http://localhost:8000/api/dispensers/?pantry_id=${props.pantryId}`)
+      const res = await axios.get(`http://localhost:8000/api/dispensers/?pantry=${props.pantryId}`)
       console.log(res.data)
       setDispeners(res.data)
     } catch (error) {

@@ -21,7 +21,7 @@ function FloorView() {
 
   const fetchPantryByFloor =  async () =>{
     try {
-      const res = await axios.get(`http://localhost:8000/api/pantries/?floor_id=${floorId}`)
+      const res = await axios.get(`http://localhost:8000/api/pantries/?floor=${floorId}`)
       // console.log(res.data)
       setPantrys(res.data)
     } catch (error) {
@@ -37,7 +37,6 @@ function FloorView() {
     setPantryId(e.target.id)
     console.log(pantryId)
   }
-   
 
 
   return (
