@@ -37,7 +37,7 @@ function App() {
             <Route path='/signin' element={<Signin />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/dashboard' element={<Dashboard />}/>
-            <Route path='/floorview/:floorId' element={<FloorView/>}/>
+            <Route path='/floors/:floorId' element={<FloorView/>}/>
           </Routes>
         </main>  
       <Footer/>
