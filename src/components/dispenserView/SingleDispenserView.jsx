@@ -37,7 +37,7 @@ const SingleDispenserView = () => {
   }
 
   return (
-    <div>
+    <div className='home-card'>
       <h2>Dispenser Details</h2>
       <p>Type: {dispenser.type}</p>
       <p>Current Level: {dispenser.current_level}</p>
