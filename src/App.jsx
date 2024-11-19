@@ -7,8 +7,9 @@ import Home from './components/home/Home.jsx'
 import About from './components/about/About.jsx'
 import Signin from './components/signin/SignIn.jsx'
 import Signup from './components/signup/SignUp.jsx'
-import Dashboard from './components/dashboard/dashboard.jsx'
-
+import Dashboard from './components/dashboard/Dashboard.jsx'
+import FloorView from './components/floorView/FloorView.jsx'
+import { verifyUser } from './services/authContext.js'
 
 function App() {
 
@@ -17,14 +18,14 @@ function App() {
 
   // TODO: useeffect to load user on signup.
 
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     const user = await verifyUser();
-  //     user ? setUser(user) : setUser(null);
-  //   };
+  useEffect(() => {
+    const fetchUser = async () => {
+      const user = await verifyUser();
+      user ? setUser(user) : setUser(null);
+    };
 
-  //   fetchUser();
-  // }, []);
+    fetchUser();
+  }, []);
 
   return (
     <>
@@ -36,6 +37,7 @@ function App() {
             <Route path='/signin' element={<Signin />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/dashboard' element={<Dashboard />}/>
+            <Route path='/floors/:floorId' element={<FloorView/>}/>
           </Routes>
         </main>  
       <Footer/>
