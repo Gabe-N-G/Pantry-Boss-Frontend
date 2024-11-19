@@ -17,20 +17,16 @@ function DispenserCard(props) {
     }
   }
 
-  useEffect(() => {
-    fetchPantryByFloor();
-  }, [props.pantryId]);
-
   const translation = {
     DR: "Drink",
     SN: "Snack",
     CO: "Coffee"
+
   }
 
-  const addDispenerToPantry = as = {
-    
-  }
-
+  useEffect(() => {
+    fetchPantryByFloor();
+  }, [props.pantryId]);
 
 
   return (
@@ -48,7 +44,13 @@ function DispenserCard(props) {
       )}
       <hr/>
       <p>Add Dispenser</p>
-      {/* <form onSubmit={} className="add-dispener-form">
+    </div>
+  )
+}
+
+export default DispenserCard
+
+{/* <form onSubmit={} className="add-dispener-form">
         <input
           type="text"
           name="name"
@@ -58,9 +60,4 @@ function DispenserCard(props) {
           required
         />
         <button type="submit">Add Pantry</button>
-      </form> */}
-    </div>
-  )
-}
-
-export default DispenserCard
+</form> */}
