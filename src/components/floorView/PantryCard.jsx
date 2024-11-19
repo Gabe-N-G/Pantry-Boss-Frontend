@@ -1,8 +1,21 @@
 import React from 'react'
 
-function PantryCard() {
+// TODO: Destructure props
+function PantryCard(props) {
+  console.log(props.pantrys)
+
   return (
-    <div className='twin-card'>PantryCard</div>
+    <div className='twin-card'>PantryCard
+      {props.pantrys ? (
+        props.pantrys.map((pant)=>(
+          <div id={pant.id}>
+            <p>{pant.name}</p>
+          </div>
+        ))
+      ) : (
+        <p>Now loading</p>
+      )}
+    </div>
   )
 }
 
