@@ -13,6 +13,7 @@ function FloorView() {
 
   const [floorDetail, setFloorDetail] = useState(null)
   const [pantrys, setPantrys] = useState(null)
+  const [pantryId, setPantryId] = useState(null)
   const [dispener, setDispener] = useState(null)
   
   // console.log(token)
@@ -34,17 +35,13 @@ function FloorView() {
   }, []);
 
 
-  // useEffect()
-
-  
-
   return (
     <>
     <div className='home-card'>
       <h1>Floor {floorId}</h1>
       <div className='twin-display'>
-        <PantryCard pantrys={pantrys}/>
-        <DispenserCard/>
+        <PantryCard pantrys={pantrys} pantryId={pantryId}/>
+        <DispenserCard pantryId={pantryId}/>
       </div>
     </div>  
     </>
