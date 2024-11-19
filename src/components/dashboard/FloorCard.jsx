@@ -28,7 +28,7 @@ const FloorCard = () => {
     
     try {
       const token = localStorage.getItem('token');
-      // const userId = localStorage.getItem('userId');
+      const userId = localStorage.getItem('userId');
 
       const response = await axios.post(
         'http://localhost:8000/api/floors/', 
