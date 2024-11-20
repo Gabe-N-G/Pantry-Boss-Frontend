@@ -108,7 +108,7 @@ function DispenserCard(props) {
         </form>
       </>
       ):(
-      <p>Pick a pantry to add a dispener to it</p>   
+      <p>Pick a pantry to add a dispenser to it</p>
       )}
     </div>
   )
