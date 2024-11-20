@@ -28,7 +28,6 @@ function DispenserCard(props) {
     DR: "Drink",
     SN: "Snack",
     CO: "Coffee"
-
   }
 
   useEffect(() => {

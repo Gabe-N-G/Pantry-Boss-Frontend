@@ -89,7 +89,7 @@ const SingleDispenserView = () => {
   }
 
   return (
-    <div className="single-dispenser-card">
+    <div className="home-card">
       <h2>Dispenser Details</h2>
       {editing ? (
         <form onSubmit={handleSubmit}>
