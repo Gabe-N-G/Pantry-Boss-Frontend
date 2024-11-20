@@ -15,7 +15,7 @@
 
   box-sizing: border-box;
   text-align: center;
-  font-family: 'futura-pt', Helvetica, Arial, sans-serif;
+  font-family: "futura-pt", 'Futura pt', Helvetica, Arial, sans-serif;
   background-color: var(--offwhite);
   min-height: 100vh;
   /* Unsure why I need to give negative margin, gotta ask */
