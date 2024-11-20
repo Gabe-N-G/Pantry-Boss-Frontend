@@ -3,6 +3,7 @@ import "./styles.css";
 import { getUserFloors } from "../../services/floorService.js";
 import DashboardPantryCard from "./DashboardPantryCard.jsx";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Dashboard = () => {
     const [floors, setFloors] = useState([]);
@@ -22,6 +23,8 @@ const Dashboard = () => {
     const handleAddFloor = () => {
         navigate("/create-floor"); // Redirect to Add Floor form
     };
+
+    
 
     const handleAddPantry = (floorId) => {
         navigate(`/create-pantry/floor/${floorId}/`); // Redirect to Add Pantry form with floorId
