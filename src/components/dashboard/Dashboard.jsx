@@ -24,7 +24,7 @@ const Dashboard = () => {
     };
 
     const handleAddPantry = (floorId) => {
-        navigate(`/create-pantry?floorId=${floorId}`); // Redirect to Add Pantry form with floorId
+        navigate(`/create-pantry/floor/${floorId}/`); // Redirect to Add Pantry form with floorId
     };
 
     return (

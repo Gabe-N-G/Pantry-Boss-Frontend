@@ -17,7 +17,7 @@ const DashboardPantryCard = (props) => {
     }, [floorId]);
 
     const handleAddDispenser = (pantryId) => {
-        navigate(`/create-dispenser?pantryId=${pantryId}`);
+        navigate(`/create-dispenser/pantry/${pantryId}`);
     };
 
     return (
