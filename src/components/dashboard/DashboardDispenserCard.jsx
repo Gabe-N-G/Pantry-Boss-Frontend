@@ -34,7 +34,7 @@ const DashboardDispenserCard = (props) => {
                     </div>
 
                     {/* Type */}
-                    <p className="type">Type: {friendlyType[dispenser.type]}</p>
+                    <p className="type"> {friendlyType[dispenser.type]}</p>
 
                     {/* Stock Level */}
                     <p className="level">
