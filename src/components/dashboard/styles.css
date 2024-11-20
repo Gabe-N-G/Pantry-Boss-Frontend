@@ -1,0 +1,276 @@
+/* Dashboard Wrapper */
+.dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* Dashboard Actions (Add Floor Button) */
+.dashboard-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+/* Welcome Message */
+.welcome-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e769a; /* Blue color for consistency */
+    margin: 0; /* Remove default margin */
+}
+
+/* Welcome Message */
+.welcome-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2e769a; /* Blue color for consistency */
+    margin: 0; /* Remove default margin */
+}
+
+.add-floor-button {
+    padding: 10px 20px;
+    background-color: #2e769a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-floor-button:hover {
+    background-color: #245d78;
+    transform: scale(1.05);
+}
+
+/* Floor Card */
+.floor-card {
+    position: relative; /* Needed for the pseudo-element */
+    display: flex;
+    flex-direction: column;
+    background-color: #fafbfd;
+    border: 2px solid #2e769a;
+    border-radius: 10px;
+    padding: 20px;
+    gap: 15px;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden; /* Ensure pseudo-element stays within the card */
+}
+
+/* Pseudo-element for Background Image */
+.floor-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../assets/officeFloor.jpg'); /* Path to the local image */
+    background-size: cover; /* Cover the entire card */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
+    z-index: 0; /* Place it behind the content */
+    filter: brightness(0.5); /* Darkens the image */
+}
+
+/* Ensure Content Stays on Top */
+.floor-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Adjust text color for Floor Card content */
+.floor-card h2 {
+    color: white; /* Ensure title stands out */
+}
+
+
+/* Floor Header */
+.floor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Add Pantry Button */
+.add-pantry-button {
+    padding: 8px 12px;
+    background-color: #2e769a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-pantry-button:hover {
+    background-color: #245d78;
+    transform: scale(1.05);
+}
+
+/* Floor Card */
+.floor-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fafbfd;
+    border: 2px solid #2e769a;
+    border-radius: 10px;
+    padding: 20px;
+    gap: 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Pantry Container */
+.pantry-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+/* Pantry Card */
+.pantry-card {
+    position: relative; /* Enables positioning for child elements */
+    display: flex;
+    flex-direction: column;
+    background-color: #cbe5ce;
+    border: 1px solid #596e7f;
+    border-radius: 8px;
+    padding: 20px;
+    width: auto;
+    height: auto;
+    min-width: 300px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Add Dispenser Button */
+.add-dispenser-button {
+    position: absolute; /* Place it in the top-right corner */
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    background-color: #2e769a; /* Blue background */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Add Dispenser Button Hover Effect */
+.add-dispenser-button:hover {
+    background-color: #245d78; /* Darker blue */
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+/* Dispenser Container */
+.dispenser-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 10px;
+    justify-content: space-around;
+}
+
+/* Dispenser Card Container */
+.dispenser-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    width: 120px;
+    height: 140px;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Dispenser Card */
+.dispenser-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Dispenser Type */
+.dispenser-card .type {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333; /* Neutral dark text for readability */
+    margin-bottom: 8px;
+}
+
+/* Stock Level */
+.dispenser-card .level {
+    font-size: 14px;
+    color: #666666; /* Softer gray text for secondary information */
+    margin-bottom: 8px;
+}
+
+/* Alert Styles */
+.dispenser-card.low-stock .alert {
+    color: #ff4d4f; /* Vibrant red for urgency */
+    background-color: #ffe6e6; /* Light red background */
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+.dispenser-card.full-stock .alert {
+    color: #4caf50; /* Vibrant green for positivity */
+    background-color: #e8f5e9; /* Light green background */
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-top: 5px;
+}
+
+/* Icon Styling */
+.dispenser-card .icon {
+    font-size: 24px; /* Larger icons for better visibility */
+    margin-bottom: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dispenser-card {
+        width: 100px; /* Reduce size on smaller screens */
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dispenser-card {
+        width: 100%; /* Full width for very small screens */
+    }
+}

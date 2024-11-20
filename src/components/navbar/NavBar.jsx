@@ -1,10 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './NavBar.css'
+import {signOut} from "../../services/authContext.js";
 
 
-// TODO: Actually pass the user into the navbar 
+
+
+// TODO: Actually pass the user into the navbar
 function NavBar({user}) {
+  const navigate = useNavigate();
+  function handleSignOut() {
+    signOut()
+    navigate("/signin");
+  }
   return (
     <>
       <nav>
@@ -13,7 +21,10 @@ function NavBar({user}) {
           <Link to={"/about"}>About</Link>
           <Link to={"/signin"}>Sign in</Link>
           <Link to={"/signup"}>Sign up</Link>
-          </div>
+          <Link to={"/signin"} onClick={handleSignOut} className="signout-button">
+            Sign Out
+          </Link>
+        </div>
       </nav>
     </>
   )

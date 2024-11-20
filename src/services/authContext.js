@@ -10,6 +10,7 @@ export const signUp = async (credentials) => {
     console.log(resp);
     localStorage.setItem("token", resp.data.access);
     localStorage.setItem("userId", resp.data.user.id);
+    localStorage.setItem("username", resp.data.user.username);
     return resp.data.user;
   } catch (error) {
     console.error(error);
@@ -22,6 +23,7 @@ export const signIn = async (credentials) => {
     const resp = await api.post("/users/login/", credentials);
     localStorage.setItem("token", resp.data.access);
     localStorage.setItem("userId", resp.data.user.id);
+    localStorage.setItem("username", resp.data.user.username);
     return resp.data.user;
   } catch (error) {
     console.error(error);
@@ -33,6 +35,7 @@ export const signOut = async () => {
   try {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
+    localStorage.removeItem("username");
     return true;
   } catch (error) {
     throw error;
