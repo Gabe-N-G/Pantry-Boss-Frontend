@@ -14,13 +14,13 @@ function DispenserCard(props) {
     pantry: ""
   })
 
-  const fetchPantryByFloor =  async () =>{
+  const fetchDispenserByPantry =  async () =>{
     try {
       const res = await axios.get(`http://localhost:8000/api/dispensers/?pantry=${props.pantryId}`)
       console.log(res.data)
       setDispeners(res.data)
     } catch (error) {
-      console.error('Error fetching pantries:', error);
+      console.error('Error fetching dispensers:', error);
     }
   }
 
@@ -32,7 +32,7 @@ function DispenserCard(props) {
   }
 
   useEffect(() => {
-    fetchPantryByFloor();
+    fetchDispenserByPantry();
   }, [props.pantryId]);
 
   const handleChange = (e) => {
@@ -46,11 +46,13 @@ function DispenserCard(props) {
   };
   console.log(form)
 
-  const addDispenserOnFloor = async () =>{
+  const addDispenserOnFloor = async (e) =>{
+    e.preventDefault()
     try {
-      
+      await axios.post('http://localhost:8000/api/dispensers/',form)
+      fetchDispenserByPantry()
     } catch (error) {
-      
+      console.error('Error creating dispensers:', error);
     }
   }
 
