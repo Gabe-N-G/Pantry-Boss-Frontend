@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Navigate, useParams, useNavigate } from "react-router-dom";
+import { Link, Navigate, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SingleDispenserView = () => {
@@ -133,9 +133,7 @@ const SingleDispenserView = () => {
             />
           </div>
           <button type="submit">Save Changes</button>
-          <button type="button" onClick={() => setEditing(false)}>
-            Cancel
-          </button>
+          <button type="button" onClick={() => setEditing(false)}> Cancel</button>
         </form>
       ) : (
         <div>
@@ -145,6 +143,7 @@ const SingleDispenserView = () => {
           <p>Maximum Capacity: {dispenser.max_capacity}</p>
           <button onClick={() => setEditing(true)}>Edit</button>
           <button onClick={handleDelete}>Delete Dispenser</button>
+          <Link to={`/dashboard/`}><button>Back to Dashboard</button></Link>
         </div>
       )}
     </div>

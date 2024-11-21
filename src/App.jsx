@@ -12,6 +12,7 @@ import FloorView from './components/floorView/FloorView.jsx'
 import SingleDispenserView from './components/dispenserView/SingleDispenserView.jsx'
 import CreatePantryForm from './components/forms/CreatePantryForm.jsx'
 import CreateDispenserForm from './components/forms/CreateDispenserForm.jsx'
+import CreateFloorForm from './components/forms/CreateFloorForm.jsx'
 import { verifyUser } from './services/authContext.js'
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
             <Route path="/dispensers/:id" element={<SingleDispenserView />} />
             <Route path='/create-pantry/floor/:floorId' element={<CreatePantryForm/>}/>
             <Route path='/create-dispenser/pantry/:pantryId' element={<CreateDispenserForm/>}/>
+            <Route path='/create-floor' element={<CreateFloorForm/>}/>
           </Routes>
         
         </main>  

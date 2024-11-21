@@ -3,21 +3,34 @@ import "./styles.css";
 import { getUserFloors } from "../../services/floorService.js";
 import DashboardPantryCard from "./DashboardPantryCard.jsx";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Dashboard = () => {
     const [floors, setFloors] = useState([]);
     const user = localStorage.getItem("username");
     const navigate = useNavigate();
 
+    const fetchFloors = async () => {
+        const floorData = await getUserFloors();
+        setFloors(floorData);
+    };
+
     useEffect(() => {
-        const fetchFloors = async () => {
-            const floorData = await getUserFloors();
-            setFloors(floorData);
-        };
-
         fetchFloors();
-
     }, []);
+
+    const handleDeleteFloor = async (floorid) => {
+        if (window.confirm('Are you sure you want to delete this floor?')) {
+          try {
+            await axios.delete(`http://localhost:8000/api/floors/${floorid}/`, {
+            });
+            //navigate where to navigate to?
+            fetchFloors();
+          } catch (error) {
+            console.error('Error deleting dispenser:', error);
+          }
+        }
+      };
 
     const handleAddFloor = () => {
         navigate("/create-floor"); // Redirect to Add Floor form
@@ -46,6 +59,11 @@ const Dashboard = () => {
                         <div className="floor-header">
                             <h2>Floor {floor.number}</h2>
                             {/* Add Pantry Button */}
+                            <button
+                                onClick={() => handleDeleteFloor(floor.id)}
+                            >
+                                Delete Floor
+                            </button>
                             <button
                                 onClick={() => handleAddPantry(floor.id)}
                                 className="add-pantry-button"
